@@ -21,9 +21,7 @@ var app = express();
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 
-const dev_db_url =
-  "mongodb+srv://admin:test123@cluster0.exjvsii.mongodb.net/local_library?retryWrites=true&w=majority&appName=Cluster0";
-
+const dev_db_url = process.env.dev_db;
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 main().catch((err) => console.log(err));
